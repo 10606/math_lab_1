@@ -102,7 +102,9 @@ def psp (l, r):
             temp += 1
     return ans
 
-
+'''
+read tabl_pr.txt
+'''
 sys.stdin = open("table_pr.txt", "r")
 for i in sys.stdin:
     z = i.split()
@@ -148,10 +150,11 @@ def zfunc(s, t):
 def check(a):
     '''
     check a is number
+    ( (99 ) is number
     '''
     for j in range(len(a)):
         i = a[j]
-        if (i != '(' and i != ')' and i != '.' and (i > '9' or i < '0') and i != '\n'):
+        if (i != '(' and i != ')' and i != '.' and (i > '9' or i < '0') and i != '\n' and i != ' '):
             return 0
     return 1
 
@@ -186,7 +189,9 @@ def parser(a, b):
     '''
     a - left iter of string
     b - right iter of string
-    return class <response> 1 or 2 arg and code operator
+    slit str on part of ( ) and operator in table_pr.txt
+    return class <response>
+        1 or 2 arg and code operator
     '''
     if (a > b):
         answer = response_(-1, -1, -1)
@@ -273,6 +278,8 @@ def get(a, b):
     a - left iter of string
     b - right iter of string
     return string result of differ
+    on table_pr.txt rules
+    get code operator from rarser
     '''
     global s
 
@@ -305,11 +312,15 @@ def get(a, b):
     return ans
 
 
+'''
+change str on unar minus
+-x -> (0-x)
+signed down before char on unar_minus.txt
+'''
 unar_ = open("unar_minus.txt", "r")
 char_unar = set()
 for i in unar_:
     char_unar.add(i[0])
-
 
 def unar_minus(s_):
     stack = deque()
@@ -346,7 +357,11 @@ def unar_minus(s_):
     return s_
 
 
-
+'''
+main function
+read from input.txt
+write in output.txt
+'''
 testout = open("output.txt", "w")
 testin = open("input.txt", "r")
 for i in testin:
@@ -358,8 +373,10 @@ for i in testin:
     out = get(0, len(s) - 1)
     out = out.replace('^', '**')
     #s__ = unar_minus(s)
-    testout.write(out + "\n" + s + "\n")
+    #testout.write(out + "\n" + s + "\n")
+    testout.write(out + "\n")
     print(out)
+'''
 s = "(-(-123*-x+x**-3)**x)/-sin(-tg(-x))"
 s = s.replace("**", "^")
 s = unar_minus(s)
@@ -374,3 +391,4 @@ print(s)
 print(s_)
 
 #(0-((0-((0-123)*(0-x)+(0-x)^(0-3)))^x))/(0-sin((0-tg((0-x)))))
+'''
