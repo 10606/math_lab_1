@@ -220,7 +220,7 @@ for i in testin:
     #s = s.replace("arctg", "arg")
     #s = s.replace("arcsin", "arcin")
     #s = s.replace("ctg", "cg")
-    s = unar_minus(s)
+    s = unar_minus(s)  
     out = get(0, len(s) - 1)
     out = out.replace('^', '**')
     #out = out.replace("arg", "arctg")
