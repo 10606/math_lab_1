@@ -28,6 +28,8 @@ def zfunc(s, t):
     find t in s with start min balans
     return posinion ans min balans
     '''
+    s = s[::-1]
+    t = t[::-1]
     splust = t + '#' + s
     tLen = len(t)
     s = splust
@@ -43,10 +45,11 @@ def zfunc(s, t):
         if i + z[i] > x + _len:
             x = i
             _len = z[i]
+        ind = len(s)-i-1
         if (z[i] == tLen):
-            if (min_ > balans[i - tLen - 1]):
-                min_ = balans[i - tLen - 1]
-                pos = i - tLen - 1
+            if (min_ > balans[ind - tLen + 1]):
+                min_ = balans[ind - tLen + 1]
+                pos = ind - tLen + 1
     return [min_, pos]
 
 
