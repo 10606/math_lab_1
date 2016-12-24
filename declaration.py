@@ -125,7 +125,7 @@ def unar_minus(s_):
     bal_ = 0
     while (i < len(s_)):
 
-        if (s_[i] == '-' and (i == 0 or s_[i - 1] == '(' or s_[i - 1] in char_unar)):
+        if (s_[i] == '-' and (i == 0 or s_[i - 1] == '(' or s_[i - 1] in char_unar or s_[i - 1] == '^')):
             s_ = s_[:i] + '(0' + s_[i:]
             i += 3
             bal_ += 1
