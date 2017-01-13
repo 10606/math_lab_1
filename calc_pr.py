@@ -190,6 +190,12 @@ def get(a, b):
         #print("index operator", i)
         #print("typ operator", tabl_pr[i].typ)
         s_ = s[0:resp.index_s0] + s[resp.index_s1:]
+        
+        if (len(resp.arg_l) > 1):
+            s__ = s[resp.arg_l[1]:resp.arg_r[1]+1];
+            if (check(s__) and resp.index_f == 4):
+                ans = "((" + s__ + ")*(" + get(resp.arg_l[0], resp.arg_r[0]) + ")*((" + s[resp.arg_l[0]:resp.arg_r[0]+1] + ")**(" + s__ + "-1)))"
+                return ans
 
         for result_ in tabl_pr[i].result:
             #print("result", result_)
