@@ -105,7 +105,8 @@ def check(a):
     '''
     for j in range(len(a)):
         i = a[j]
-        if (i != '(' and i != ')' and i != '.' and (i > '9' or i < '0') and i != '\n' and i != ' ' and i != '.' and i != ','):
+        #if (i != '(' and i != ')' and i != '.' and (i > '9' or i < '0') and i != '\n' and i != ' ' and i != '.' and i != ','):
+        if (i == 'x'):
             return 0
     return 1
 
