@@ -213,11 +213,11 @@ def get(a, b):
 
 '''
 main function
-read from input.txt
-write in output.txt
+read from deriv.in
+write in deriv.out
 '''
-testout = open("output.txt", "w")
-testin = open("input.txt", "r")
+testout = open("deriv.out", "w")
+testin = open("deriv.in", "r")
 for i in testin:
     s = i
     if (s[len(s) - 1] == '\n'):
